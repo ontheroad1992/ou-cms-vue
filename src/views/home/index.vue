@@ -3,18 +3,27 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 02:31:56
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 02:32:23
+ * @LastEditTime: 2020-03-06 11:46:17
  -->
 <template>
-  <div>主业</div>
+  <div class="container">
+    <home-cards />
+    <home-charts />
+  </div>
 </template>
 
 <script>
-export default {
+import HomeCards from './HomeCards'
+import HomeCharts from './HomeCharts'
 
+export default {
+  components: {
+    HomeCards,
+    HomeCharts
+  }
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 
 </style>

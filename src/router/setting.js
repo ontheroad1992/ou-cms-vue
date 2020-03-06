@@ -3,27 +3,24 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 02:59:10
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 04:28:08
+ * @LastEditTime: 2020-03-06 05:25:54
  */
 
 export default {
-  title: "基础设置",
   isNav: true,
   icon: "setting",
-  name: "setting",
+  name: "基础设置",
   routes: [
     {
       path: "/setting/company",
-      name: "CompanySetting",
+      name: "公司设置",
       icon: "setting",
-      title: "公司设置",
       component: () => import("@/views/setting/CompanySetting.vue")
     },
     {
       path: "/setting/store",
-      name: "StoreSetting",
+      name: "门店设置",
       icon: "setting",
-      title: "门店设置",
       component: () => import("@/views/setting/StoreSetting.vue")
     }
   ]

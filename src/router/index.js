@@ -7,8 +7,7 @@ Vue.use(VueRouter);
 
 const home = {
   path: "/home",
-  name: "home",
-  title: "主业",
+  name: "主业",
   icon: "home",
   component: () => import("@/views/home/index.vue")
 };

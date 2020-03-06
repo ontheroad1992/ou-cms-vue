@@ -18,14 +18,14 @@
           @click="handleRouteToPath(menu.path)"
         >
           <a-icon :type="menu.icon" />
-          <span>{{ menu.title }}</span>
+          <span>{{ menu.name }}</span>
         </a-menu-item>
         <!-- 一级子菜单 -->
         <a-sub-menu
           :key="menu.name"
           v-else
         >
-          <span slot="title"><a-icon :type="menu.icon" /><span>{{ menu.title }}</span></span>
+          <span slot="title"><a-icon :type="menu.icon" /><span>{{ menu.name }}</span></span>
           <!-- 二级菜单 -->
           <template v-for="sonMenu of menu.routes">
             <a-menu-item
@@ -34,7 +34,7 @@
               @click="handleRouteToPath(sonMenu.path)"
             >
               <a-icon type="smile" />
-              <span>{{ sonMenu.title }}</span>
+              <span>{{ sonMenu.name }}</span>
             </a-menu-item>
           </template>
         </a-sub-menu>
@@ -85,6 +85,7 @@ export default {
   },
   methods: {
     handleRouteToPath(path) {
+      if (this.$route.path === path) return
       this.$router.push({ path })
     }
   },
@@ -97,12 +98,14 @@ export default {
   .logo {
     height: 60px;
     line-height: 60px;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
     font-size: 24px;
     color: #ffffff;
+    text-align: center;
   }
   .menu {
     text-align: left;
