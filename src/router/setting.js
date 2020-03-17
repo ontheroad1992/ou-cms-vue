@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 02:59:10
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 05:25:54
+ * @LastEditTime: 2020-03-10 14:47:36
  */
 
 export default {
@@ -15,13 +15,19 @@ export default {
       path: "/setting/company",
       name: "公司设置",
       icon: "setting",
-      component: () => import("@/views/setting/CompanySetting.vue")
+      component: () => import("@/views/setting/Company.vue")
     },
     {
       path: "/setting/store",
       name: "门店设置",
       icon: "setting",
-      component: () => import("@/views/setting/StoreSetting.vue")
+      component: () => import("@/views/setting/Store.vue")
+    },
+    {
+      path: "/setting/store",
+      name: "门店设置",
+      icon: "setting",
+      component: () => import("@/views/setting/Store.vue")
     }
   ]
 };

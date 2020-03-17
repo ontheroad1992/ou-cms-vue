@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 05:06:07
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 11:07:45
+ * @LastEditTime: 2020-03-06 13:08:39
  -->
 <template>
   <div class="base-tab-nav">
@@ -87,18 +87,11 @@ export default {
       this.$router.push(path)
     },
     handleCloseTab(path) {
-      let currentIndex = 0
-      this.tabs = this.tabs.filter((item, index) => {
+      this.tabs = this.tabs.filter((item) => {
         let bool = item.path !== path
-        if (bool) currentIndex = index
         return bool
       })
-      if (this.$route.path === path && currentIndex > 0) {
-        const path = this.tabs[currentIndex - 1].path
-        this.$router.push({ path })
-      } else {
-        this.$router.push({ path: '/home' })
-      }
+      this.$router.push({ path: '/home' })
     }
   }
 }
