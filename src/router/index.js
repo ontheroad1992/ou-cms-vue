@@ -1,16 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import home from "./home";
+import log from "./log";
+import device from "./device";
 import setting from "./setting";
+import task from "./task";
+import proxy from "./proxy";
+import member from "./member";
 
 Vue.use(VueRouter);
-
-const home = {
-  path: "/home",
-  name: "主业",
-  icon: "home",
-  component: () => import("@/views/home/index.vue")
-};
 
 const routes = [
   {
@@ -18,7 +17,15 @@ const routes = [
     name: "admin",
     redirect: "/home",
     component: () => import("@/layout/base-layout"),
-    children: [home, ...setting.routes]
+    children: [
+      home,
+      log,
+      ...device.routes,
+      task,
+      proxy,
+      member,
+      ...setting.routes
+    ]
   },
   {
     path: "/user",
@@ -43,6 +50,6 @@ const router = new VueRouter({
 //   console.log("from", form);
 // });
 
-export const sider = [home, setting];
+export const sider = [home, log, device, task, proxy, member, setting];
 
 export default router;

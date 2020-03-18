@@ -3,25 +3,31 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 02:59:10
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-17 15:52:45
+ * @LastEditTime: 2020-03-18 14:16:22
  */
 
 export default {
   isNav: true,
   icon: "setting",
-  name: "基础设置",
+  name: "系统设置",
   routes: [
     {
-      path: "/setting/company",
-      name: "公司设置",
+      path: "/setting/rule",
+      name: "角色管理",
       icon: "setting",
-      component: () => import("@/views/setting/Company.vue")
+      component: () => import("@/views/setting/SettingRule.vue")
     },
     {
-      path: "/setting/store",
-      name: "门店设置",
+      path: "/setting/user",
+      name: "用户管理",
       icon: "setting",
-      component: () => import("@/views/setting/Store.vue")
+      component: () => import("@/views/setting/SettingUser.vue")
+    },
+    {
+      path: "/setting/manage",
+      name: "系统管理",
+      icon: "setting",
+      component: () => import("@/views/setting/SettingManage.vue")
     }
   ]
 };
