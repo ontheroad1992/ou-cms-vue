@@ -3,12 +3,16 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 03:08:28
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 03:09:28
+ * @LastEditTime: 2020-03-18 14:40:25
  -->
 <template>
   <div class="user-layout">
-    <h1>用户</h1>
-    <router-view />
+    <div class="header">
+      <h1>火星人后台管理</h1>
+    </div>
+    <div class="content">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -18,6 +22,19 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.user-layout {
+  height: 100vh;
+  background: url('~@/assets/images/user-bg.svg') no-repeat 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    h1 {
+      font-size: 24px;
+    }
+    margin-top: 10vh;
+    margin-bottom: 20px;
+  }
+}
 </style>

@@ -35,7 +35,7 @@ const routes = [
     children: [
       {
         path: "/user/login",
-        component: () => import("@/views/user/LoginUser.vue")
+        component: () => import("@/views/user/UserLogin.vue")
       }
     ]
   }
