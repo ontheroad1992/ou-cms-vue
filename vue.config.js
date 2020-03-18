@@ -1,5 +1,4 @@
 const theme = require("./theme");
-require("./mock");
 
 module.exports = {
   css: {
