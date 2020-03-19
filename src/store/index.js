@@ -18,7 +18,8 @@ export default new Vuex.Store({
   plugins: [
     // 数据永久存储
     createPersistedState({
-      paths: ["user.accountToken", "user.refreshToken", "user.username"]
+      // paths: ["user.accountToken", "user.refreshToken", "user.username"]
+      paths: ["user"]
     })
   ]
 });

@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 01:38:46
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-06 05:05:23
+ * @LastEditTime: 2020-03-19 17:04:04
  -->
 <template>
   <a-layout-header class="header">
@@ -40,7 +40,10 @@
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item>
-              <div style="drop-item">
+              <div
+                style="drop-item"
+                @click="userLoginOut"
+              >
                 <span>退出</span>
               </div>
             </a-menu-item>
@@ -67,6 +70,18 @@ export default {
         this.$emit('input', value)
       }
     }
+  },
+  methods: {
+    userLoginOut() {
+      this.$confirm({
+        title: '即将退出登陆',
+        onOk: () => {
+          this.$store.dispatch('user/clearUserInfo')
+          this.$router.push({ path: '/user' })
+        }
+      })
+
+    }
   }
 }
 </script>
@@ -83,7 +98,7 @@ export default {
 }
 .trigger, .bell {
   font-size: 16px;
-  line-height: 60px;
+  line-height: 50px;
   vertical-align: middle;
   padding: 0 24px;
   .cursor
@@ -92,7 +107,10 @@ export default {
   font-size: 20px;
 }
 .user {
-  padding: 0 24px;
+  width: 120px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
   span {
     font-size: 16px;
     margin-right: 12px;

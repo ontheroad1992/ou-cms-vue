@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-05 23:55:34
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-08 13:25:46
+ * @LastEditTime: 2020-03-19 17:01:02
  */
 
 import Vue from "vue";
@@ -26,8 +26,11 @@ import {
   Table,
   Switch,
   Modal,
-  Checkbox
+  Checkbox,
+  LocaleProvider
 } from "ant-design-vue";
+
+Vue.prototype.$confirm = Modal.confirm;
 
 Vue.use(Layout);
 Vue.use(Menu);
@@ -49,3 +52,4 @@ Vue.use(Table);
 Vue.use(Switch);
 Vue.use(Modal);
 Vue.use(Checkbox);
+Vue.use(LocaleProvider);

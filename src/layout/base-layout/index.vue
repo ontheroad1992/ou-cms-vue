@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import _ from 'lodash/lang'
 import BaseSider from './BaseSider'
 import BaseHeader from './BaseHeader'
 import BaseTabNav from './BaseTabNav'
@@ -31,6 +32,16 @@ export default {
       collapsed: false
     };
   },
+  computed: {
+    accountToken() {
+      return this.$store.state.user.accountToken
+    }
+  },
+  mounted() {
+    if (_.isEmpty(this.accountToken)) {
+      return this.$router.push({ path: '/user' })
+    }
+  }
 };
 </script>
 <style scoped lang="less">

@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-19 14:32:25
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 15:02:02
+ * @LastEditTime: 2020-03-19 16:42:17
  */
 
 import UserServer from "@/server/UserServer";
@@ -56,6 +56,14 @@ const actions = {
     commit(SET_USER_USERNAME, username);
     commit(SET_USER_RULE, rule);
     commit(SET_USER_NAME, name);
+    return true;
+  },
+  async clearUserInfo({ commit }) {
+    commit(SET_USER_ACCOUNT_TOKEN, "");
+    commit(SET_USER_REFRESH_TOKEN, "");
+    commit(SET_USER_USERNAME, "");
+    commit(SET_USER_RULE, "");
+    commit(SET_USER_NAME, "");
   }
 };
 

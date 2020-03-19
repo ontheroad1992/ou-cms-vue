@@ -3,10 +3,11 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-19 15:17:31
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 16:00:59
+ * @LastEditTime: 2020-03-19 16:06:54
  */
 import _ from "lodash/string";
 
+/** 把对象转换为驼峰 */
 export const changeCamelCase = args => {
   const obj = { ...args };
   const changVarName = obj => {

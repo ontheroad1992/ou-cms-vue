@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 03:08:28
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 10:05:55
+ * @LastEditTime: 2020-03-19 16:33:58
  -->
 <template>
   <div class="user-layout">
@@ -17,8 +17,20 @@
 </template>
 
 <script>
-export default {
+import _ from 'lodash/lang'
 
+export default {
+  computed: {
+    accountToken() {
+      return this.$store.state.user.accountToken
+    }
+  },
+  mounted() {
+    console.log(this.accountToken)
+    if (!_.isEmpty(this.accountToken)) {
+      return this.$router.push({ path: '/' })
+    }
+  }
 }
 </script>
 
