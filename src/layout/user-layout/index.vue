@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 03:08:28
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-18 14:40:25
+ * @LastEditTime: 2020-03-19 10:05:55
  -->
 <template>
   <div class="user-layout">
@@ -33,7 +33,7 @@ export default {
     h1 {
       font-size: 24px;
     }
-    margin-top: 10vh;
+    margin-top: 20vh;
     margin-bottom: 20px;
   }
 }

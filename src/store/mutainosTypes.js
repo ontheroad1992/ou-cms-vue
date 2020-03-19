@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-18 10:01:39
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-18 10:26:51
+ * @LastEditTime: 2020-03-19 15:01:18
  */
 
 export const SET_HOME_DEVICES_INFO = "SET_HOME_DEVICES_INFO";
@@ -11,3 +11,13 @@ export const SET_HOME_DEVICES_INFO = "SET_HOME_DEVICES_INFO";
 export const SET_HOME_RECHARGE_AMOUNTS = "SET_HOME_RECHARGE_AMOUNTS";
 
 export const SET_HOME_CONSUME_AMOUNTS = "SET_HOME_CONSUME_AMOUNTS";
+
+export const SET_USER_USERNAME = "SET_USER_USERNAME";
+
+export const SET_USER_ACCOUNT_TOKEN = "SET_USER_ACCOUNT_TOKEN";
+
+export const SET_USER_REFRESH_TOKEN = "SET_USER_REFRESH_TOKEN";
+
+export const SET_USER_RULE = "SET_USER_RULE";
+
+export const SET_USER_NAME = "SET_USER_NAME";
