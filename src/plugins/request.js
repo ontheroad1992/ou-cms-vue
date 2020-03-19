@@ -1,9 +1,11 @@
+import { changeCamelCase } from "./util";
+
 /*
  * @Description: axios 请求配置
  * @Author: ontheroad1992
  * @Date: 2020-02-21 19:30:20
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-18 09:35:12
+ * @LastEditTime: 2020-03-19 16:04:01
  */
 const axios = require("axios");
 
@@ -70,7 +72,9 @@ _axios.interceptors.response.use(
   async res => {
     // 如果请求的状态值为 2 系列，可直接返回参数
     if (res.status.toString().charAt(0) === "2") {
-      return res.data; // 直接返回 data 数据
+      // 讲变量修改为驼峰命名
+      const newData = changeCamelCase(res.data);
+      return newData; // 直接返回 data 数据
     }
     // 如果不是，则证明请求的接口，业务错误或者其他
     return new Promise((resolve, reject) => {

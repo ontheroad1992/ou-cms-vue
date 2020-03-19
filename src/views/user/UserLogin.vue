@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 03:07:19
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 10:33:49
+ * @LastEditTime: 2020-03-19 15:16:02
  -->
 <template>
   <div class="container">
@@ -25,7 +25,9 @@
           />
         </a-input>
       </a-form-item>
-      <a-form-item>
+      <a-form-item
+        has-feedback
+      >
         <a-input
           size="large"
           type="password"
@@ -66,6 +68,7 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
+          this.$store.dispatch('user/userLogin', values)
         }
       });
     },
