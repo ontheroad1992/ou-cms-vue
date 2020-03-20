@@ -8,5 +8,6 @@ module.exports = {
       a_sds: "xxxx",
       c_asd: "xxx"
     }
+    // menu: ["home", "setting"]
   }
 };

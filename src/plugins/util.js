@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-19 15:17:31
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 16:06:54
+ * @LastEditTime: 2020-03-19 18:13:45
  */
 import _ from "lodash/string";
 
@@ -12,6 +12,7 @@ export const changeCamelCase = args => {
   const obj = { ...args };
   const changVarName = obj => {
     const newObj = {};
+    console.log(typeof obj);
     for (let item in obj) {
       let item_ = item;
       // 检测是否存在 xxx_xxx 格式的变量

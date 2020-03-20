@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-18 10:01:39
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 15:01:18
+ * @LastEditTime: 2020-03-19 17:46:41
  */
 
 export const SET_HOME_DEVICES_INFO = "SET_HOME_DEVICES_INFO";
@@ -21,3 +21,5 @@ export const SET_USER_REFRESH_TOKEN = "SET_USER_REFRESH_TOKEN";
 export const SET_USER_RULE = "SET_USER_RULE";
 
 export const SET_USER_NAME = "SET_USER_NAME";
+
+export const SET_USER_MENU = "SET_USER_MENU";

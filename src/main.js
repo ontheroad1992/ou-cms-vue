@@ -4,7 +4,11 @@ import router from "./router";
 import store from "./store";
 
 import "@/assets/style/base.less";
-import "@/plugins/ui-component";
+import "@/plugins/antd/lazyload";
+// import antd from "ant-design-vue";
+// import "ant-design-vue/dist/antd.css";
+
+// Vue.use(antd);
 
 Vue.config.productionTip = true;
 

@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 03:08:28
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 16:33:58
+ * @LastEditTime: 2020-03-19 17:09:20
  -->
 <template>
   <div class="user-layout">
@@ -26,7 +26,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.accountToken)
     if (!_.isEmpty(this.accountToken)) {
       return this.$router.push({ path: '/' })
     }

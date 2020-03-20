@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-06 01:38:46
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 17:04:04
+ * @LastEditTime: 2020-03-19 17:15:50
  -->
 <template>
   <a-layout-header class="header">
@@ -98,7 +98,6 @@ export default {
 }
 .trigger, .bell {
   font-size: 16px;
-  line-height: 50px;
   vertical-align: middle;
   padding: 0 24px;
   .cursor

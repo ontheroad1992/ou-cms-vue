@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-19 14:32:25
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 16:42:17
+ * @LastEditTime: 2020-03-19 17:48:15
  */
 
 import UserServer from "@/server/UserServer";
@@ -12,7 +12,8 @@ import {
   SET_USER_REFRESH_TOKEN,
   SET_USER_RULE,
   SET_USER_USERNAME,
-  SET_USER_NAME
+  SET_USER_NAME,
+  SET_USER_MENU
 } from "../mutainosTypes";
 
 const state = () => ({
@@ -20,7 +21,8 @@ const state = () => ({
   accountToken: "",
   refreshToken: "",
   rule: "",
-  name: ""
+  name: "",
+  menu: []
 });
 
 const mutations = {
@@ -38,6 +40,9 @@ const mutations = {
   },
   [SET_USER_NAME](state, payload) {
     state.name = payload;
+  },
+  [SET_USER_MENU](state, payload) {
+    state.menu = [...payload];
   }
 };
 
@@ -49,13 +54,15 @@ const actions = {
       accountToken,
       refreshToken,
       rule,
-      name
+      name,
+      menu
     } = await UserServer.userLogin(username, password);
     commit(SET_USER_ACCOUNT_TOKEN, accountToken);
     commit(SET_USER_REFRESH_TOKEN, refreshToken);
     commit(SET_USER_USERNAME, username);
     commit(SET_USER_RULE, rule);
     commit(SET_USER_NAME, name);
+    commit(SET_USER_MENU, menu);
     return true;
   },
   async clearUserInfo({ commit }) {
@@ -64,6 +71,7 @@ const actions = {
     commit(SET_USER_USERNAME, "");
     commit(SET_USER_RULE, "");
     commit(SET_USER_NAME, "");
+    commit(SET_USER_NAME, []);
   }
 };
 
