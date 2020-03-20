@@ -3,7 +3,7 @@
  * @Author: ontheroad1992
  * @Date: 2020-03-19 14:32:25
  * @LastEditors: ontheroad1992
- * @LastEditTime: 2020-03-19 17:48:15
+ * @LastEditTime: 2020-03-20 10:12:57
  */
 
 import UserServer from "@/server/UserServer";
@@ -41,7 +41,7 @@ const mutations = {
   [SET_USER_NAME](state, payload) {
     state.name = payload;
   },
-  [SET_USER_MENU](state, payload) {
+  [SET_USER_MENU](state, payload = ["home"]) {
     state.menu = [...payload];
   }
 };

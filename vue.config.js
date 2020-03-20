@@ -1,6 +1,7 @@
-// const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
+// const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+
 const theme = require("./theme");
 
 function resolve(dir) {
@@ -24,25 +25,25 @@ module.exports = {
     }
   },
   configureWebpack: {
-    plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
+    plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+      // new webpack.optimize.UglifyJsPlugin()
+    ],
     resolve: {
       alias: {
         "@ant-design/icons/lib/dist$": resolve("./src/plugins/antd/icons.js")
       }
     }
-  },
-  chainWebpack: config => {
-    // lodash 按需加载
-    // config.plugin("lodashWebpackPlugin").use(LodashModuleReplacementPlugin);
-
-    // ant-design-vue 的 icon 按需加载
-    const svgRule = config.module.rule("svg");
-    svgRule.uses.clear();
-    svgRule
-      .use("babel-loader")
-      .loader("babel-loader")
-      .end()
-      .use("vue-svg-loader")
-      .loader("vue-svg-loader");
   }
+  // chainWebpack: config => {
+  //   // ant-design-vue 的 icon 按需加载
+  //   // const svgRule = config.module.rule("svg");
+  //   // svgRule.uses.clear();
+  //   // svgRule
+  //   //   .use("babel-loader")
+  //   //   .loader("babel-loader")
+  //   //   .end()
+  //   //   .use("vue-svg-loader")
+  //   //   .loader("vue-svg-loader");
+  // }
 };
